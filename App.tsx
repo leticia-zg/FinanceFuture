@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native';
+import Header from './components/header';
+import Navbar from './components/navbar';
+import Simulate from './components/simulate';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.headerWrapper}>
+        <Header title="Finance Future" />
+      </View>
+
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <Simulate />
+      </ScrollView>
+
+      <Navbar />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#121212',
+  },
+  headerWrapper: {
+    paddingTop: 200, 
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingBottom: 80, 
   },
 });
