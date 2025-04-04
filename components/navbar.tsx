@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   navText: {
     color: "#FFFFFF",
     fontSize: 12,
-    marginTop: 4, // Espaço entre o ícone e o texto
+    marginTop: 4, 
   },
 });
 
